@@ -1,10 +1,10 @@
-
 # Tudo sobre o Google Glass... 👓 
-<img width="auto" height="auto" alt="image" src="./assets/imgs/glass-logo-peq.jpg" />
+
+<img width="auto" height="auto" alt="image" src="./assets/imgs/preview.png" />
 
 Nunca tinha ouvido falar sobre, mas gostei da estética.
 
-Projeto desenvolvido no curso de HTML5 do Curso em Vídeo do Profº Gustavo Guanabara, um curso de 11 anos atrás. 
+Projeto desenvolvido no curso de [HTML5 do Curso em Vídeo](https://www.cursoemvideo.com/curso/html5/) do Profº Gustavo Guanabara, de 11 anos atrás. 
 
 Pessoalmente, adoro cursos de programação antigos e essa estética da técnologia dos anos 2010s.
 
