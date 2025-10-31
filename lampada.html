@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lâmpada</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        #lux {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+        }
+
+        h1 {
+            color: #000;
+        }
+
+        img {
+            width: 200px;
+            height: 260px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        var quebrada = false;
+        var mensagens = [
+            "Uau, que brilho!",
+            "A luz chegou!",
+            "Obrigada!",
+            ";)",
+            "É isso aí!",
+            "Uhul!",
+            "Luz divina!",
+            "Que claridade!",
+            "Brilho total!"
+        ];
+
+        function mudaLampada(tipo) {
+            if (!quebrada) {
+                document.getElementById("luz").src = './assets/imgs/' + tipo + '.png';
+
+                if (tipo === 'lampada-quebrada') {
+                    quebrada = true;
+                    document.querySelector("h1").innerText = ":(";
+                    document.getElementById('lux').style.zIndex = '1'
+                    document.getElementById('lux').style.background = '#00000090'
+                } else if (tipo === 'lampada-acesa') {
+                    var mensagemAleatoria = mensagens[Math.floor(Math.random() * mensagens.length)];
+                    document.querySelector("h1").innerText = mensagemAleatoria;
+                    document.getElementById('lux').style.background = 'radial-gradient(circle, #fffd5a 0%, #ffffe0cc 50%, #fff 100%)';
+                } else if (tipo === 'lampada-apagada') {
+                    document.querySelector("h1").innerText = "Acenda a lâmpada!";
+                    document.getElementById('lux').style.background = 'radial-gradient(circle, #fff 0%, #d3d3d3 50%,#00000043 100%)';
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Acenda a lâmpada!</h1>
+    <img src="./assets/imgs/lampada-apagada.png" alt="lâmpada" id="luz" onmouseenter="mudaLampada('lampada-acesa')" onmouseout="mudaLampada('lampada-apagada')" onclick="mudaLampada('lampada-quebrada')">
+    <div id="lux"></div>
+</body>
+
+</html>
